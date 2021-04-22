@@ -9,7 +9,7 @@ exports.signup = (req, res) => {
                 error
             })
         }
-        re.json({
+        res.json({
             user
         })
     })
