@@ -2,7 +2,7 @@ const { Order, CartItem } = require('../models/order');
 const { errorHandler } = require('../helpers/dbErrorHandler');
 // sendgrid for email npm i @sendgrid/mail
 const sgMail = require('@sendgrid/mail');
-sgMail.setApiKey('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');
+sgMail.setApiKey('process.env.SENDGRID_API_KEY');
 
 exports.orderById = (req, res, next, id) => {
     Order.findById(id)
@@ -35,7 +35,7 @@ exports.create = (req, res) => {
         // order.products.length
         // order.amount
         const emailData = {
-            to: 'rahul.mango.60@gmail.com', // admin
+            to: 'vanilla73@gmail.com', // admin
             from: 'vanilla@ecommerce.com',
             subject: `A new order is received`,
             html: `
